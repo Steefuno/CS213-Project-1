@@ -58,7 +58,7 @@ public class ShoppingBag {
 		}
 		public double salesPrice() {
 			double totalSale = 0;
-			for(int i = 0;i<bag.length;i++) {
+			for(int i = 0;i<this.bag.length;i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
