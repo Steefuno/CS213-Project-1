@@ -90,6 +90,7 @@ public class GroceryItem {
 	/**
 	 * Tests the GroceryItem class's functions
 	 * @param args	command line arguments, not used
+	 * @return		nothing
 	 */
 	public static void main(String[] args) {
 		GroceryItem item1 = new GroceryItem("Onion", 5.99, true);
