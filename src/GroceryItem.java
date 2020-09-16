@@ -75,7 +75,7 @@ public class GroceryItem {
 	}
 	
 	/**
-	 * Returns a string representation of a grocery item
+	 * Returns a string representation of a grocery item<br>
 	 * Format: "itemName: $xx.xx : [tax free, taxable]"
 	 * @return		the string representation
 	 */
@@ -90,7 +90,6 @@ public class GroceryItem {
 	/**
 	 * Tests the GroceryItem class's functions
 	 * @param args	command line arguments, not used
-	 * @return		nothing
 	 */
 	public static void main(String[] args) {
 		GroceryItem item1 = new GroceryItem("Onion", 5.99, true);

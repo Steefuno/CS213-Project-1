@@ -16,7 +16,7 @@ public class Shopping {
 	}
 	
 	/**
-	 * Handles the A command
+	 * Handles the A command<br>
 	 * Adds an item from the shopping bag given the name, price and if taxable
 	 * @param name		the name of the item
 	 * @param price		the price of the item
@@ -29,7 +29,7 @@ public class Shopping {
 	}
 	
 	/**
-	 * Handles the R command
+	 * Handles the R command<br>
 	 * Removes an item from the shopping bag given the name, price and if taxable
 	 * @param name		the name of the item
 	 * @param price		the price of the item
@@ -42,9 +42,8 @@ public class Shopping {
 	}
 	
 	/**
-	 * Handles the P command
+	 * Handles the P command<br>
 	 * Outputs the number of items and the items
-	 * @return		nothing
 	 */
 	private void display() {
 		int itemCount = this.shoppingBag.getItemCount();
@@ -70,9 +69,8 @@ public class Shopping {
 	}
 	
 	/**
-	 * Handles the C command
+	 * Handles the C command<br>
 	 * Outputs the shopping bag, then the sales total, sales tax, and total amount
-	 * @return		nothing
 	 */
 	private void checkingOut() {
 		int itemCount = this.shoppingBag.getItemCount();
@@ -98,7 +96,7 @@ public class Shopping {
 	}
 	
 	/**
-	 * Handles a single command input by the client
+	 * Handles a single command input by the client<br>
 	 * Checks if is a valid command, then calls the respective method
 	 * @param input	the string inputted by the client
 	 * @return		true if the command Q was not used to continue the loop in run(), false otherwise
@@ -142,9 +140,8 @@ public class Shopping {
 	}
 
 	/**
-	 * Starts the loop to handle I/O
+	 * Starts the loop to handle I/O<br>
 	 * The program awaits a command, then responds with the respective function
-	 * @return		nothing
 	 */
 	public void run() {
 		Scanner sc = new Scanner(System.in);
@@ -162,7 +159,6 @@ public class Shopping {
 	/**
 	 * Tests the Shopping class's functions
 	 * @param args	command line arguments, not used
-	 * @return		nothing
 	 */
 	public static void main(String[] args) {
 		new Shopping().run();
