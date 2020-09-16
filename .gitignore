@@ -12,7 +12,8 @@
 
 # Eclipse Files
 .settings/*
-*.project
+.project
+.classpath
 .gitignore
 
 # Package Files #
