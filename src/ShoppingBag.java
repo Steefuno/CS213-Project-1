@@ -12,7 +12,7 @@ public class ShoppingBag {
 		private int find(GroceryItem item) { 
 			for(int i = 0;i<this.bag.length;i++) {
 				if(this.bag[i] == null) {
-					break;
+					continue;
 				}
 				if(this.bag[i].equals(item)) {
 					return i;
@@ -43,7 +43,8 @@ public class ShoppingBag {
 		}
 		public boolean remove(GroceryItem item) {
 			int index = this.find(item);
-			if (index>0) {
+			System.out.println("index: " + index);
+			if (index>=0) {
 				this.size--;
 				this.bag[index] = this.bag[bag.length-1];
 				this.bag[this.bag.length-1] = null;
@@ -119,6 +120,11 @@ public class ShoppingBag {
 		x.add(skirt);
 		x.add(apple);
 		x.add(apple);
+		x.add(apple);
+		x.remove(skirt);
+		x.remove(apple);
+		x.print();
+		
 		//tests add if changes size
 		System.out.println("size: " + x.size);
 		
@@ -150,6 +156,7 @@ public class ShoppingBag {
 		//for true
 		boolean skirtPresent = x.remove(skirt); 
 		System.out.println("skirt in bag: " + skirtPresent);
+		
 		
 		//tests remove if changes size
 		System.out.println("size: " + x.size);
