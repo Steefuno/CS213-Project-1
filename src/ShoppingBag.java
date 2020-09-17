@@ -58,7 +58,7 @@ public class ShoppingBag {
 		}
 		public double salesPrice() {
 			double totalSale = 0;
-			for(int i = 0;i<this.bag.length;i++) {
+			for(int i = 0;i<bag.length;i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -89,6 +89,16 @@ public class ShoppingBag {
 		            System.out.println(element);
 		        }
 		}
+		public int getItemCount() {
+			
+			return this.size;
+		}
+		public void clear() {
+			GroceryItem[] newBag = new GroceryItem[5]; 
+			this.bag = newBag;
+			this.size = 0;
+		}
+		
 		
 
 	public static void main(String[] args) {
@@ -149,6 +159,9 @@ public class ShoppingBag {
 		System.out.printf("Sales_Price: $%.2f ", x.salesPrice());
 		System.out.println();
 		System.out.printf("sales_Tax: $%.2f", x.salesTax());
+		System.out.println();
+		x.clear();
+		x.print();
+		System.out.println(x.getItemCount());
 	}
 }
-
