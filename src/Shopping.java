@@ -76,8 +76,11 @@ public class Shopping {
 		int itemCount = this.shoppingBag.getItemCount();
 		String unit = getItemOrItems(itemCount);
 		
-		String priceFormat = "$##.##";
+		String priceFormat = "$#.#";
 		DecimalFormat formattedPrice = new DecimalFormat(priceFormat);
+		formattedPrice.setMinimumFractionDigits(2);
+		formattedPrice.setMaximumFractionDigits(2);
+		
 		double salesPrice = this.shoppingBag.salesPrice();
 		double salesTax = this.shoppingBag.salesTax();
 		double amountPaid = salesPrice + salesTax;
@@ -87,9 +90,9 @@ public class Shopping {
 		
 		System.out.println("**Checking out " + itemCount + " " + unit + ".");
 		this.shoppingBag.print();
-		System.out.println("*Sales total: $" + salesTotalStr);
-		System.out.println("*Sales tax: $" + salesTaxStr);
-		System.out.println("*Amount paid: $" + amountPaidStr);
+		System.out.println("*Sales total: " + salesTotalStr);
+		System.out.println("*Sales tax: " + salesTaxStr);
+		System.out.println("*Amount paid: " + amountPaidStr);
 		
 		this.shoppingBag.clear();
 		return;

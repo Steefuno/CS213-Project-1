@@ -1,5 +1,3 @@
-package shopping;
-
 public class ShoppingBag {
 	
 		private GroceryItem[] bag; // array-based implementation of the bag
