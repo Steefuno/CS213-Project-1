@@ -103,7 +103,7 @@ public class Shopping {
 	 */
 	private boolean handleCommand(String input) {
 		// Splits the input by whitespace
-		String[] args = input.split("\\s");
+		String[] args = input.split("\\s+", 0);
 		
 		// Checks if a command was inputted
 		if (args.length == 0) {
@@ -149,7 +149,7 @@ public class Shopping {
 		// Repeat getting and responding to inputs until the Q command
 		String input;
 		do {
-			input = sc.next();
+			input = sc.nextLine();
 		} while (handleCommand(input));
 		
 		sc.close();
