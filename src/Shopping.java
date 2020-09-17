@@ -78,10 +78,10 @@ public class Shopping {
 		
 		String priceFormat = "$##.##";
 		DecimalFormat formattedPrice = new DecimalFormat(priceFormat);
-		double salesTotal = this.shoppingBag.salesTotal();
+		double salesPrice = this.shoppingBag.salesPrice();
 		double salesTax = this.shoppingBag.salesTax();
-		double amountPaid = salesTotal + salesTax;
-		String salesTotalStr = formattedPrice.format(salesTotal);
+		double amountPaid = salesPrice + salesTax;
+		String salesTotalStr = formattedPrice.format(salesPrice);
 		String salesTaxStr = formattedPrice.format(salesTax);
 		String amountPaidStr = formattedPrice.format(amountPaid);
 		
