@@ -86,7 +86,11 @@ public class ShoppingBag {
 		}
 		public void print() { 
 			  for (GroceryItem element: this.bag) {
+				  if(element == null) {
+					  continue;
+				  }
 		            System.out.println(element);
+		            
 		        }
 		}
 		public int getItemCount() {
