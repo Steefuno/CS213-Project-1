@@ -1,14 +1,25 @@
+package shopping;
+
 public class ShoppingBag {
 	
 		private GroceryItem[] bag; // array-based implementation of the bag
 		private int size; // number of items currently in the bag
-		
+		/**
+		This constructor sets every instance of the ShoppingBag to size 0
+		and the array length to size 5.
+		*/
 		public ShoppingBag() {
 			this.size = 0;
 			this.bag = new GroceryItem[5];
 		}
+		/**
+		Finds the item in the list and returns the index in the bag
+		returns -1 if the item doesn't appear in the bag
+		@param name of the item to be found
+		@return if item found returns index otherwise returns -1
+		*/
 		private int find(GroceryItem item) { 
-			for(int i = 0;i<this.bag.length;i++) {
+			for(int i = 0;i < this.bag.length;i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -19,13 +30,23 @@ public class ShoppingBag {
 			}
 			return -1;
 			
-		} // helper method to find an item
+		} 
+		
+		/**
+		Grows the item by 5 if the bag goes past its respective capacity
+		*/
 		private void grow() { 
 				GroceryItem[] newBag = new GroceryItem[this.bag.length+5]; 
 				System.arraycopy(this.bag, 0, newBag, 0, this.bag.length);
 				this.bag = newBag;
 			
-		} // helper method to grow the capacity
+		}
+		
+		/**
+		Adds an item to the bag in the next available spot if the bag goes past its
+		capacity the grow methods is called to increase the capacity to the bag
+		@param Grocery item to be added
+		*/
 		public void add(GroceryItem item) {
 			this.size++;
 			if(this.size > this.bag.length) {
@@ -39,9 +60,17 @@ public class ShoppingBag {
 			}
 			
 		}
+		
+		/**
+		Finds the item in the list using the find helper methods. 
+		If found returns true and removes by setting the index found to the last element 
+		in the list, and sets the last element to null. Otherwise returns 
+		false and do nothing
+		@param name of the item to be removed
+		@return if the item is in the bag return true otherwise return false
+		*/
 		public boolean remove(GroceryItem item) {
 			int index = this.find(item);
-			System.out.println("index: " + index);
 			if (index>=0) {
 				this.size--;
 				this.bag[index] = this.bag[bag.length-1];
@@ -55,9 +84,14 @@ public class ShoppingBag {
 			
 
 		}
+		
+		/**
+		Calculates the total price of each item in the bag 
+		@return Returns the total sale price of the bag 
+		*/
 		public double salesPrice() {
 			double totalSale = 0;
-			for(int i = 0;i<bag.length;i++) {
+			for(int i = 0;i < bag.length;i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -67,9 +101,14 @@ public class ShoppingBag {
 			}
 			return totalSale;
 		}
+		
+		/**
+		Calculates the total sale tax of each item in the bag 
+		@return Returns the total sale tax price of the bag 
+		*/
 		public double salesTax() { 
 			double totalSaleTax = 0;
-			for(int i = 0;i<this.bag.length;i++) {
+			for(int i = 0;i < this.bag.length;i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -78,11 +117,16 @@ public class ShoppingBag {
 				}
 				else {
 					continue;
+				}
 			}
-		}
 			
 			return totalSaleTax;
 		}
+		
+		/**
+		Prints the item name first, the sale price second, 
+		and if the item is taxable last 
+		*/
 		public void print() { 
 			  for (GroceryItem element: this.bag) {
 				  if(element == null) {
@@ -92,18 +136,29 @@ public class ShoppingBag {
 		            
 		        }
 		}
+		
+		/**
+		This method checks the amount of items in the bag by 
+		returning the size. To give the amount of items in the bag.
+		@return Returns the amount of items in the bag
+		*/
 		public int getItemCount() {
-			
 			return this.size;
 		}
+		
+		/**
+		clears all items in the bag by assigning a new 
+		bag to the instance of bag, and reseting the size instance to 0 
+		*/
 		public void clear() {
 			GroceryItem[] newBag = new GroceryItem[5]; 
 			this.bag = newBag;
 			this.size = 0;
 		}
 		
-		
-
+	/**
+	Testbed for implementing the test cases in test document
+	*/	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GroceryItem apple = new GroceryItem("Apple",2.12,true);
@@ -154,8 +209,6 @@ public class ShoppingBag {
 		//for true
 		boolean skirtPresent = x.remove(skirt); 
 		System.out.println("skirt in bag: " + skirtPresent);
-		
-		
 		//tests remove if changes size
 		System.out.println("size: " + x.size);
 		//checks if remove put item in right index
@@ -174,3 +227,4 @@ public class ShoppingBag {
 		System.out.println(x.getItemCount());
 	}
 }
+
