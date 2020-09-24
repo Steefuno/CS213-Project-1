@@ -1,9 +1,20 @@
 package shopping;
+/**
+This is a shopping bag class that takes grocery items as input, has a capacity of
+five initially, and doubles its capacity by 5 when the bag has reached its capacity.
+This class has nine methods and is capable of adding, finding, and removing 
+specific items. As well as being able to grow the bag, clear the bag, and calculate
+total sale price and tax. The class can also tell you the number of items in the bag
+and can print what is currently in the bag.
+@author Julian Romero, Steven Nguyen
+*/
+
 
 public class ShoppingBag {
 	
 		private GroceryItem[] bag; // array-based implementation of the bag
 		private int size; // number of items currently in the bag
+		
 		/**
 		This constructor sets every instance of the ShoppingBag to size 0
 		and the array length to size 5.
@@ -12,6 +23,7 @@ public class ShoppingBag {
 			this.size = 0;
 			this.bag = new GroceryItem[5];
 		}
+		
 		/**
 		Finds the item in the list and returns the index in the bag
 		returns -1 if the item doesn't appear in the bag
@@ -157,7 +169,9 @@ public class ShoppingBag {
 		}
 		
 	/**
-	Testbed for implementing the test cases in test document
+	Testbed for implementing the test cases in test document.
+	This testbed tests the following methods: 
+	add, remove, grow, and saleTax
 	*/	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -167,64 +181,70 @@ public class ShoppingBag {
 		GroceryItem pencil = new GroceryItem("Pencil",1.00,true);
 		
 		ShoppingBag x = new ShoppingBag();
-		//items in shopping bag
+		
+		//case 1: test for add
+		System.out.println("Test Case1: case1");
 		x.add(apple);
+		System.out.println("number of items: " + x.getItemCount());
+		x.print();
+		System.out.println("Test Case1: case2");
 		x.add(apple);
+		System.out.println("number of items: " + x.getItemCount());
+		x.print();
+		
+		System.out.println("Test Case1: case3");
 		x.add(skirt);
-		x.add(apple);
-		x.add(apple);
-		x.add(apple);
-		x.remove(skirt);
-		x.remove(apple);
+		System.out.println("number of items: " + x.getItemCount());
 		x.print();
 		
-		//tests add if changes size
-		System.out.println("size: " + x.size);
-		
-		//tests print method and if grow method copies elements
+		//case 2: test for remove
+		System.out.println("Test Case2: case1");
+		System.out.println(x.remove(skirt));
+		System.out.println("number of items: " + x.getItemCount());
 		x.print();
-		//tests sales price and sales tax method
-		System.out.printf("Sales_Price: $%.2f ", x.salesPrice());
-		System.out.println();
-		System.out.printf("sales_Tax: $%.2f", x.salesTax());
-		System.out.println();
+		System.out.println("Test Case2: case2");
+		System.out.println(x.remove(puppy));
+		System.out.println("number of items: " + x.getItemCount());
+		x.print();
+		System.out.println("Test Case2: case3");
+		System.out.println(x.remove(apple));
+		System.out.println(x.remove(apple));
+		System.out.println("number of items: " + x.getItemCount());
+		x.print();
 		
-		//tests if grow method doubles array
+		//case 3: test for grow()
+		System.out.println("Test Case3: case1");
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.print();
+		System.out.println("number of items: " + x.getItemCount());
+		System.out.println("array_length: " + x.bag.length);
+		System.out.println("Test Case3: case2");
 		x.add(pencil);
+		x.print();
+		System.out.println("number of items: " + x.getItemCount());
+		System.out.println("array_length: " + x.bag.length);
+		System.out.println("Test Case3: case3");
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.add(apple);
+		x.print();
+		System.out.println("number of items: " + x.getItemCount());
 		System.out.println("array_length: " + x.bag.length);
 		
-		//tests find method:
-		//returns index for item in list, if not present -1 returned
-		int findSkirt = x.find(skirt);
-		System.out.println("skirt index: " + findSkirt);
-		//tests if not in list
-		int findPuppy = x.find(puppy);
-		System.out.println("puppy index: " + findPuppy);
+		//case 4: test for salesTax()
 		
-		
-		//tests if remove method removes from list: 
-		//for false
-		boolean puppyPresent = x.remove(puppy); 
-		System.out.println("puppy in bag: " + puppyPresent);
-		//for true
-		boolean skirtPresent = x.remove(skirt); 
-		System.out.println("skirt in bag: " + skirtPresent);
-		//tests remove if changes size
-		System.out.println("size: " + x.size);
-		//checks if remove put item in right index
-		x.print();
-		x.add(apple);
-		System.out.println("size: " + x.size);
-		x.print();
-		//tests sales price and sales tax method
-		
-		System.out.printf("Sales_Price: $%.2f ", x.salesPrice());
-		System.out.println();
+		System.out.println("Test Case4: case1");
 		System.out.printf("sales_Tax: $%.2f", x.salesTax());
 		System.out.println();
-		x.clear();
-		x.print();
-		System.out.println(x.getItemCount());
+		System.out.println("Test Case4: case2");
+		x.add(skirt);
+		System.out.printf("sales_Tax: $%.2f", x.salesTax());
+		
 	}
 }
-
