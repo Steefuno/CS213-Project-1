@@ -31,7 +31,7 @@ public class ShoppingBag {
 		@return if item found returns index otherwise returns -1
 		*/
 		private int find(GroceryItem item) { 
-			for(int i = 0;i < this.bag.length;i++) {
+			for(int i = 0; i < this.bag.length; i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -64,7 +64,7 @@ public class ShoppingBag {
 			if(this.size > this.bag.length) {
 				this.grow();
 			}
-			for(int i = 0;i < this.bag.length;i++) {
+			for(int i = 0; i < this.bag.length; i++) {
 				if(this.bag[i] == null) {
 					this.bag[i] = item;
 					break;
@@ -83,7 +83,7 @@ public class ShoppingBag {
 		*/
 		public boolean remove(GroceryItem item) {
 			int index = this.find(item);
-			if (index>=0) {
+			if (index >= 0) {
 				this.size--;
 				this.bag[index] = this.bag[bag.length-1];
 				this.bag[this.bag.length-1] = null;
@@ -103,7 +103,7 @@ public class ShoppingBag {
 		*/
 		public double salesPrice() {
 			double totalSale = 0;
-			for(int i = 0;i < bag.length;i++) {
+			for(int i = 0; i < bag.length; i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -120,7 +120,7 @@ public class ShoppingBag {
 		*/
 		public double salesTax() { 
 			double totalSaleTax = 0;
-			for(int i = 0;i < this.bag.length;i++) {
+			for(int i = 0; i < this.bag.length; i++) {
 				if(this.bag[i] == null) {
 					continue;
 				}
@@ -175,10 +175,10 @@ public class ShoppingBag {
 	*/	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		GroceryItem apple = new GroceryItem("Apple",2.12,true);
-		GroceryItem skirt = new GroceryItem("Skirt",10.05,false);
-		GroceryItem puppy = new GroceryItem("Puppy",500.00,true);
-		GroceryItem pencil = new GroceryItem("Pencil",1.00,true);
+		GroceryItem apple = new GroceryItem("Apple" , 2.12 , true);
+		GroceryItem skirt = new GroceryItem("Skirt" , 10.05 , false);
+		GroceryItem puppy = new GroceryItem("Puppy" , 500.00 , true);
+		GroceryItem pencil = new GroceryItem("Pencil" , 1.00 , true);
 		
 		ShoppingBag x = new ShoppingBag();
 		
