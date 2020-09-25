@@ -1,3 +1,4 @@
+package shopping;
 import java.text.DecimalFormat;
 
 /**
