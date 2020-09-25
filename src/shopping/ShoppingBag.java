@@ -27,7 +27,7 @@ public class ShoppingBag {
 		/**
 		*Finds the item in the list and returns the index in the bag
 		*returns -1 if the item doesn't appear in the bag
-		*@param obj	name of the item to be found
+		*@param item	name of the item to be found
 		*@return 	the int found returns index otherwise returns -1
 		*/
 		private int find(GroceryItem item) { 
@@ -57,7 +57,7 @@ public class ShoppingBag {
 		/**
 		*Adds an item to the bag in the next available spot if the bag goes past its
 		*capacity the grow methods is called to increase the capacity to the bag
-		*@param 	obj Grocery item to be added
+		*@param 	item Grocery item to be added
 		*/
 		public void add(GroceryItem item) {
 			this.size++;
@@ -78,7 +78,7 @@ public class ShoppingBag {
 		*If found returns true and removes by setting the index found to the last element 
 		*in the list, and sets the last element to null. Otherwise returns 
 		*false and do nothing
-		*@param obj		name of the item to be removed
+		*@param item		name of the item to be removed
 		*@return 	if the boolean if item is in the bag return true otherwise return false
 		*/
 		public boolean remove(GroceryItem item) {
