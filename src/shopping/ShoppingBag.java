@@ -16,8 +16,8 @@ public class ShoppingBag {
 		private int size; // number of items currently in the bag
 		
 		/**
-		This constructor sets every instance of the ShoppingBag to size 0
-		and the array length to size 5.
+		*This constructor sets every instance of the ShoppingBag to size 0
+		*and the array length to size 5.
 		*/
 		public ShoppingBag() {
 			this.size = 0;
@@ -25,10 +25,10 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Finds the item in the list and returns the index in the bag
-		returns -1 if the item doesn't appear in the bag
-		@param name of the item to be found
-		@return if item found returns index otherwise returns -1
+		*Finds the item in the list and returns the index in the bag
+		*returns -1 if the item doesn't appear in the bag
+		*@param obj	name of the item to be found
+		*@return 	the int found returns index otherwise returns -1
 		*/
 		private int find(GroceryItem item) { 
 			for(int i = 0; i < this.bag.length; i++) {
@@ -45,7 +45,7 @@ public class ShoppingBag {
 		} 
 		
 		/**
-		Grows the item by 5 if the bag goes past its respective capacity
+		*Grows the item by 5 if the bag goes past its respective capacity
 		*/
 		private void grow() { 
 				GroceryItem[] newBag = new GroceryItem[this.bag.length+5]; 
@@ -55,9 +55,9 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Adds an item to the bag in the next available spot if the bag goes past its
-		capacity the grow methods is called to increase the capacity to the bag
-		@param Grocery item to be added
+		*Adds an item to the bag in the next available spot if the bag goes past its
+		*capacity the grow methods is called to increase the capacity to the bag
+		*@param 	obj Grocery item to be added
 		*/
 		public void add(GroceryItem item) {
 			this.size++;
@@ -74,12 +74,12 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Finds the item in the list using the find helper methods. 
-		If found returns true and removes by setting the index found to the last element 
-		in the list, and sets the last element to null. Otherwise returns 
-		false and do nothing
-		@param name of the item to be removed
-		@return if the item is in the bag return true otherwise return false
+		*Finds the item in the list using the find helper methods. 
+		*If found returns true and removes by setting the index found to the last element 
+		*in the list, and sets the last element to null. Otherwise returns 
+		*false and do nothing
+		*@param obj		name of the item to be removed
+		*@return 	if the boolean if item is in the bag return true otherwise return false
 		*/
 		public boolean remove(GroceryItem item) {
 			int index = this.find(item);
@@ -98,8 +98,8 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Calculates the total price of each item in the bag 
-		@return Returns the total sale price of the bag 
+		*Calculates the total price of each item in the bag 
+		*@return 	Returns the double total sale price of the bag 
 		*/
 		public double salesPrice() {
 			double totalSale = 0;
@@ -115,8 +115,8 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Calculates the total sale tax of each item in the bag 
-		@return Returns the total sale tax price of the bag 
+		*Calculates the total sale tax of each item in the bag 
+		*@return 	Returns the double total sale tax price of the bag 
 		*/
 		public double salesTax() { 
 			double totalSaleTax = 0;
@@ -136,8 +136,8 @@ public class ShoppingBag {
 		}
 		
 		/**
-		Prints the item name first, the sale price second, 
-		and if the item is taxable last 
+		*Prints the item name first, the sale price second, 
+		*and if the item is taxable last 
 		*/
 		public void print() { 
 			  for (GroceryItem element: this.bag) {
@@ -150,17 +150,17 @@ public class ShoppingBag {
 		}
 		
 		/**
-		This method checks the amount of items in the bag by 
-		returning the size. To give the amount of items in the bag.
-		@return Returns the amount of items in the bag
+		*This method checks the amount of items in the bag by 
+		*returning the size. To give the amount of items in the bag.
+		*@return 	Returns int amount of items in the bag
 		*/
 		public int getItemCount() {
 			return this.size;
 		}
 		
 		/**
-		clears all items in the bag by assigning a new 
-		bag to the instance of bag, and reseting the size instance to 0 
+		*clears all items in the bag by assigning a new 
+		*bag to the instance of bag, and reseting the size instance to 0 
 		*/
 		public void clear() {
 			GroceryItem[] newBag = new GroceryItem[5]; 
@@ -169,9 +169,10 @@ public class ShoppingBag {
 		}
 		
 	/**
-	Testbed for implementing the test cases in test document.
-	This testbed tests the following methods: 
-	add, remove, grow, and saleTax
+	*Testbed for implementing the test cases in test document.
+	*This testbed tests the following methods: 
+	*add, remove, grow, and saleTax
+	* @param args	command line arguments, not used
 	*/	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
